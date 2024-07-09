@@ -1,4 +1,3 @@
-
 export const galleryData = [
     {
       image: "/images/9.1.jpg",

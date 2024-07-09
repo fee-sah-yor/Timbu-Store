@@ -4,6 +4,7 @@ import ProductPage from "./Page/ProductPage";
 import Home from "./Page/Home";
 import Topbar from "./components/Topbar";
 import Footer from "./components/Footer";
+import CheckoutPage from "./Page/CheckoutPage";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/Product page" element={<ProductPage/>} />
+          <Route path="/Checkout page" element={<CheckoutPage/>} />
         </Routes>
       </BrowserRouter>
       <Footer />

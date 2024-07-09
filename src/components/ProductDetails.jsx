@@ -1,60 +1,15 @@
 import React from "react";
+import { reviewsData, suggestionData } from "../data/ProductData";
+import { useNavigate } from "react-router-dom";
 
 const ProductDetails = () => {
-    const suggestionData = [
-        {
-            image: "/images/9.1.jpg",
-            amount: "₤100.99",
-            title: "Stainless Steel Frying Pan",
-            icon: "/images/Button.svg",
-            text: "Quick add",
-          },
-          {
-            image: "/images/10.1.jpg",
-            amount: "₤220.50",
-            title: "Gourmet Kiru Knife Set",
-            icon: "/images/Button.svg",
-            text: "Quick add",
-          },
-          {
-            image: "/images/4.1.webp",
-            amount: "₤300.00",
-            title: "Stand Mixer",
-            icon: "/images/Button.svg",
-            text: "Quick add",
-          },
-          {
-            image: "/images/11.1.jpg",
-            amount: "₤70.00",
-            title: "Rochell Highball Glasses",
-            icon: "/images/Button.svg",
-            text: "Quick add",
-          },
-          {
-            image: "/images/6.1.webp",
-            amount: "₤10.00",
-            title: "Clear Recycled Plastic Tumblr",
-            icon: "/images/Button.svg",
-            text: "Quick add",
-          },
-          {
-            image: "/images/7.2.webp",
-            amount: "₤36.00",
-            title: "Granite Non-Stick Griddle Pan",
-            icon: "/images/Button.svg",
-            text: "Quick add",
-          },
-          {
-            image: "/images/8.2.webp",
-            amount: "₤40.00",
-            title: "Granite Shallow Caserrole Dish & Lid",
-            icon: "/images/Button.svg",
-            text: "Quick add",
-          },
-    ]
-    
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/Checkout page");
+  };
+  
   return (
-    <section className="flex flex-col items-center mx-24 space-y-10 px-28 mt-9">
+    <section className="flex flex-col items-center justify-center w-full space-y-10 px-28 mt-9">
       {/* =====product carousel==== */}
       <div className="w-[87%] carousel">
         <div className="carousel-item">
@@ -89,21 +44,33 @@ const ProductDetails = () => {
       {/* ======attributes/add to cart========== */}
       <div className="flex items-center justify-between w-full gap-3">
         <div className="rating">
-          <input type="radio" name="rating-1" className="mask mask-star" />
           <input
             type="radio"
             name="rating-1"
-            className="mask mask-star"
+            className="bg-black mask mask-star"
+          />
+          <input
+            type="radio"
+            name="rating-1"
+            className="bg-black mask mask-star"
             defaultChecked
           />
           <input
             type="radio"
             name="rating-1"
-            className="mask mask-star"
+            className="bg-black mask mask-star"
             defaultChecked
           />
-          <input type="radio" name="rating-1" className="mask mask-star" />
-          <input type="radio" name="rating-1" className="mask mask-star" />
+          <input
+            type="radio"
+            name="rating-1"
+            className="bg-black border mask mask-star"
+          />
+          <input
+            type="radio"
+            name="rating-1"
+            className="bg-black mask mask-star"
+          />
         </div>
 
         <div className="ml-28 dropdown">
@@ -176,6 +143,7 @@ const ProductDetails = () => {
         <button
           type="button"
           class="text-white bg-purple-900 hover:bg-purple-900 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-28 py-2.5 text-center inline-flex items-center me-2"
+          onClick={handleClick}
         >
           Add to cart
         </button>
@@ -206,28 +174,25 @@ const ProductDetails = () => {
         <h2 className="text-lg font-medium">More from TIMBU</h2>
         {/* =======cards======== */}
         <div className="flex w-[80vw] overflow-x-auto">
-        {suggestionData.map((info, index)=>(
-        <div key={index} className="w-[100%] mx-1 bg-gray-200 card">
-          <figure className="px-3 pt-6">
-            <img
-              src={info.image}
-              alt=""
-              className="w-[800px]"
-            />
-          </figure>
-          <div className="px-6 pt-2 pb-6 items-left">
-          <div className="w-full text-black">
-        <p className="text-xs font-bold">{info.amount}</p>
-        <p className="text-xs font-normal">{info.title}</p>
-      </div>
-          </div>
-        </div>
-        ))}
+          {suggestionData.map((info, index) => (
+            <div key={index} className="w-[100%] mx-1 bg-gray-200 card">
+              <figure className="px-3 pt-6">
+                <img src={info.image} alt="" className="w-[800px]" />
+              </figure>
+              <div className="px-6 pt-2 pb-6 items-left">
+                <div className="w-full text-black">
+                  <p className="text-xs font-bold">{info.amount}</p>
+                  <p className="text-xs font-normal">{info.title}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
       {/* =======reviews=========== */}
       <div class="w-full p-4 bg-white  rounded-lg  sm:p-8">
+        {/* =====headings====== */}
         <div class="flex items-center justify-between mb-4">
           <h5 class="text-lg font-bold leading-none text-black">
             Reviews 2.9/5 (3)
@@ -239,118 +204,60 @@ const ProductDetails = () => {
             View all
           </a>
         </div>
+        {/* ========comments====== */}
         <div class="flow-root">
-          <ul role="list" class="divide-y divide-gray-200 ">
-            <li class="py-3 sm:py-4">
-              <div class="flex items-center">
-                <div class="flex-shrink-0">
-                  <img
-                    class="w-8 h-8 rounded-full"
-                    src="/docs/images/people/profile-picture-1.jpg"
-                    alt="Neil image"
-                  />
+          <ul role="list" class="divide-y divide-gray-300 text-black ">
+            {reviewsData.map((info, index) => (
+              <li key={index} class="py-3 sm:py-4">
+                <div class="flex items-center">
+                  <div class="flex-shrink-0">
+                    <img class="w-20 h-20 rounded-xl" src={info.image} alt="" />
+                  </div>
+                  <div class="flex-1 min-w-0 ms-4">
+                    <p class="text-xl font-normal truncate ">{info.review}</p>
+                    <p class="text-md font-normal truncate ">
+                      {info.commentOne}
+                    </p>
+                    <p class="text-md font-normal truncate ">
+                      {info.commentTwo}
+                    </p>
+                  </div>
+                  <div class="inline-flex items-center text-md font-normal">
+                    <div className="rating">
+                      <input
+                        type="radio"
+                        name="rating-1"
+                        className="bg-red-600 mask mask-star"
+                      />
+                      <input
+                        type="radio"
+                        name="rating-1"
+                        className="bg-red-600 mask mask-star"
+                        defaultChecked
+                      />
+                      <input
+                        type="radio"
+                        name="rating-1"
+                        className="bg-red-600 mask mask-star"
+                        defaultChecked
+                      />
+                      <input
+                        type="radio"
+                        name="rating-1"
+                        className="bg-gray-600 mask mask-star"
+                        defaultChecked
+                      />
+                      <input
+                        type="radio"
+                        name="rating-1"
+                        className="bg-gray-600 mask mask-star"
+                        defaultChecked
+                      />
+                    </div>
+                  </div>
                 </div>
-                <div class="flex-1 min-w-0 ms-4">
-                  <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                    Neil Sims
-                  </p>
-                  <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                    email@windster.com
-                  </p>
-                </div>
-                <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                  $320
-                </div>
-              </div>
-            </li>
-            <li class="py-3 sm:py-4">
-              <div class="flex items-center ">
-                <div class="flex-shrink-0">
-                  <img
-                    class="w-8 h-8 rounded-full"
-                    src="/docs/images/people/profile-picture-3.jpg"
-                    alt="Bonnie image"
-                  />
-                </div>
-                <div class="flex-1 min-w-0 ms-4">
-                  <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                    Bonnie Green
-                  </p>
-                  <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                    email@windster.com
-                  </p>
-                </div>
-                <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                  $3467
-                </div>
-              </div>
-            </li>
-            <li class="py-3 sm:py-4">
-              <div class="flex items-center">
-                <div class="flex-shrink-0">
-                  <img
-                    class="w-8 h-8 rounded-full"
-                    src="/docs/images/people/profile-picture-2.jpg"
-                    alt="Michael image"
-                  />
-                </div>
-                <div class="flex-1 min-w-0 ms-4">
-                  <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                    Michael Gough
-                  </p>
-                  <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                    email@windster.com
-                  </p>
-                </div>
-                <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                  $67
-                </div>
-              </div>
-            </li>
-            <li class="py-3 sm:py-4">
-              <div class="flex items-center ">
-                <div class="flex-shrink-0">
-                  <img
-                    class="w-8 h-8 rounded-full"
-                    src="/docs/images/people/profile-picture-4.jpg"
-                    alt="Lana image"
-                  />
-                </div>
-                <div class="flex-1 min-w-0 ms-4">
-                  <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                    Lana Byrd
-                  </p>
-                  <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                    email@windster.com
-                  </p>
-                </div>
-                <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                  $367
-                </div>
-              </div>
-            </li>
-            <li class="pt-3 pb-0 sm:pt-4">
-              <div class="flex items-center ">
-                <div class="flex-shrink-0">
-                  <img
-                    class="w-8 h-8 rounded-full"
-                    src="/docs/images/people/profile-picture-5.jpg"
-                    alt="Thomas image"
-                  />
-                </div>
-                <div class="flex-1 min-w-0 ms-4">
-                  <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                    Thomes Lean
-                  </p>
-                  <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                    email@windster.com
-                  </p>
-                </div>
-                <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                  $2367
-                </div>
-              </div>
-            </li>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
