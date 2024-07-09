@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <>
-    <section>
+    <section className='px-10 my-8 mx-14'>
     <footer className="flex items-center justify-between text-xl">
           <div className="font-extrabold text-gray-700">
             TIMBU Ltd.

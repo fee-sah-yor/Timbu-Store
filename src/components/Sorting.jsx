@@ -4,14 +4,13 @@ const Sorting = () => {
   return (
     <>
      {/* ============filter and sorting section================ */}
-     <article>
+     <article className='flex items-center justify-center mt-5 gap-9'>
         {/* ================sort by============ */}
         <div className="dropdown">
           <div
             tabIndex={0}
             role="button"
-            className="text-black bg-gray-50 hover:bg-gray-300  focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
-          >
+            className="inline-flex items-center px-5 py-3 text-lg font-medium text-center text-gray-500 rounded-lg bg-gray-50 hover:bg-gray-300 focus:outline-none">
             Sort By
             <svg
               class="w-3 h-3 ms-3"
@@ -34,10 +33,10 @@ const Sorting = () => {
             className="dropdown-content text-gray-700 menu bg-gray-100 rounded-box z-[1] w-52 p-2 shadow"
           >
             <li>
-              <a>Item 1</a>
+              Item 1
             </li>
             <li>
-              <a>Item 2</a>
+              Item 2
             </li>
           </ul>
         </div>
@@ -46,8 +45,7 @@ const Sorting = () => {
           <div
             tabIndex={0}
             role="button"
-            className="text-black bg-gray-50 hover:bg-gray-300  focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
-          >
+            className="inline-flex items-center px-5 py-3 text-lg font-medium text-center text-gray-500 rounded-lg bg-gray-50 hover:bg-gray-300 focus:outline-none">
             Filter
             <svg
               class="w-3 h-3 ms-3"
@@ -70,10 +68,10 @@ const Sorting = () => {
             className="dropdown-content text-gray-700 menu bg-gray-100 rounded-box z-[1] w-52 p-2 shadow"
           >
             <li>
-              <a>Item 1</a>
+              Item 1
             </li>
             <li>
-              <a href="#">Item 2</a>
+              Item 2
             </li>
           </ul>
         </div>
