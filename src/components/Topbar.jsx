@@ -12,11 +12,11 @@ const Topbar = () => {
       
       <div className="flex flex-col items-center justify-between gap-7">
         {/* ========LOGO IMAGE=========== */}
-        <div className="max-[768px]:hidden flex items-center justify-center w-full">
+        <div className="max-[768px]:hidden flex items-center justify-center w-full cursor-pointer">
           <img
             src="/images/TIMBU.svg"
             alt="store logo"
-            className="w-[9%] h-full"
+            className="w-[9%] h-full" 
           />
         </div>
 

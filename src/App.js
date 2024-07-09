@@ -4,7 +4,7 @@ import ProductPage from "./Page/ProductPage";
 import Home from "./Page/Home";
 import Topbar from "./components/Topbar";
 import Footer from "./components/Footer";
-import CheckoutPage from "./Page/CheckoutPage";
+import ConfirmationPage from "./Page/ConfirmationPage";
 
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/Product page" element={<ProductPage/>} />
-          <Route path="/Checkout page" element={<CheckoutPage/>} />
+          <Route path="/Confirmation page" element={<ConfirmationPage/>} />
         </Routes>
       </BrowserRouter>
       <Footer />

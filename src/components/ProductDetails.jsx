@@ -5,13 +5,14 @@ import { useNavigate } from "react-router-dom";
 const ProductDetails = () => {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/Checkout page");
+    navigate("/Confirmation page");
   };
-  
+
   return (
     <section className="flex flex-col items-center justify-center w-full space-y-10 px-28 mt-9">
       {/* =====product carousel==== */}
-      <div className="w-[87%] carousel">
+      <div className="flex items-center justify-center w-full">
+      <div className="w-[85%] carousel">
         <div className="carousel-item">
           <img
             src="/images/9.1.jpg"
@@ -33,6 +34,7 @@ const ProductDetails = () => {
             className="h-[47vh] w-full object-contain "
           />
         </div>
+      </div>
       </div>
 
       {/* =====product name/price===== */}
@@ -64,12 +66,12 @@ const ProductDetails = () => {
           <input
             type="radio"
             name="rating-1"
-            className="bg-black border mask mask-star"
+            className="bg-gray-600 border mask mask-star"
           />
           <input
             type="radio"
             name="rating-1"
-            className="bg-black mask mask-star"
+            className="bg-gray-600 mask mask-star"
           />
         </div>
 
@@ -170,7 +172,7 @@ const ProductDetails = () => {
       </div>
 
       {/* ======suggestions========== */}
-      <div className="text-black">
+      <div className="flex items-center w-full text-left text-black">
         <h2 className="text-lg font-medium">More from TIMBU</h2>
         {/* =======cards======== */}
         <div className="flex w-[80vw] overflow-x-auto">
